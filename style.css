@@ -8,19 +8,19 @@
     margin: 0 7%  ;
 }
 
-.tilte{
+.header__left{
     font-size: 40px;
     font-weight: 300;
     color: #035397;
 }
 
-.right-header{
+.header__right{
     display: flex;
     justify-content: end;
     width: 50%;
 }
 
-.right-header input{
+.header__right input{
     width: 50%;
     border-radius: 30px;
     padding-left: 5% ;
@@ -31,7 +31,7 @@
     background-position: 90%; 
 }
 
-.right-header button{
+.header__right button{
     width: 20%;
     background-color: #035397;
     color: white;
@@ -41,51 +41,49 @@
     margin-left: 5%;
 }
 
-.users{
-    margin-top: 5%;
-    border: none;
-}
-
-.users td{
-    box-shadow: 0px 8px 24px rgba(149, 157, 165, 0.2);
-    border: none;
-}
-
-.user{
-    width: 100%;
+.all__cards{
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:20px
+}
+
+.card{
+    border: none;
+    display: flex;
+    width: calc(100% / 3 - 20px);
+    box-shadow: 0px 8px 24px rgba(149, 157, 165, 0.2);
     justify-content: space-around;
 }
 
-.img1{
+.card__img{
     width: 30%;
+    display : flex ;
+    align-items:center;
 }
-.img1 img{
+.card__img img{
     width: 60%;
-    margin-left: 15%;
-    margin-top: 40%;
+
 }
 
-.info{
+.card__info{
     width: 50%;
 }
 
-.img2{
+.card__option{
     margin-right: -5%;
     margin-top: 5%;
 }
 
-.img2 img{
+.card__option img{
     width: 40%;
     transform: rotate(90deg);
-
-    /* margin-right: ; */
 }
 
 .number {
     display: flex;
     justify-content: end;
-    margin-right: 7%;
+    gap:10px
 }
 
 .number p{
@@ -94,10 +92,56 @@
     border: 1px;
     border-style: solid;
     border-color: #035397;
+    padding: .25rem;
     border-radius: 50px;
     color: #035397;
     text-align: center;
     font-size: 16px;
-    margin-left: 1%;
-    
+    transition: all .3s ease-in-out;
 }
+.number p:hover
+{
+    cursor: pointer;
+    background-color: #035397;
+    color:#fff
+}
+
+@media (max-width: 390px) {
+    .header {
+      max-width: 100%;
+    }
+
+    .header__left{
+        font-size: 20px;
+    }
+
+    .header__right input{
+        width: 90%;
+        font-size: 12px;
+    }
+
+    .header__right button{
+        width: 30%;
+        background-color: #035397;
+        color: white;
+        border: none;
+        border-radius: 30px;
+        font-size: 12px;
+        margin-left: 5%;
+    }
+
+    .all__cards{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card{
+        width: 100%;
+    }
+
+    .number{
+        justify-content: center;
+    }
+
+
+  }
